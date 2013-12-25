@@ -4,4 +4,4 @@
 
 pacman --noconfirm -S grub
 grub-mkconfig -o /boot/grub/grub.cfg
-grub-install targethdd
+grub-install --target=i386-pc --recheck targethdd
