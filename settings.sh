@@ -14,7 +14,7 @@ pacman --noconfirm -S mesa xorg-server xorg-xinit xf86-input-synaptics xf86-inpu
 
 echo "Choose your graphics"
 options=("intel" "amd" "nvidia")
-select $opt in "${options[@]}"; do
+select opt in "${options[@]}"; do
 	case $opt in
 		intel ) echo "Installing intel graphics drivers" ; pacman --noconfirm -S xf86-video-intel libva-intel-driver ; echo "Done" ; break ;;
 		amd ) echo -e "Installing amd ati drivers\nDo you want opensource or proprietary?"
@@ -38,16 +38,12 @@ done
 
 echo "Choose a Desktop Environtment"
 options=("cinnamon" "xfce" "gnome" "kde" "lxde")
-select $opt in "${options[@]}"; do
+select opt in "${options[@]}"; do
 	case $opt in
 		cinnamon ) echo "Installing cinnamon" ; pacman --noconfirm -S cinnamon ; cp /etc/skel/.xinitrc ~ ; echo "exec cinnamon-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
-			;;
 		xfce ) echo "Installing xfce" ; pacman --noconfirm -S xfce4 ; cp /etc/skel/.xinitrc ~ ; echo "exec xfce4-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
-			;;
 		gnome ) echo "Installing gnome" ; pacman --noconfirm -S gnome ; cp /etc/skel/.xinitrc ~ ; echo "exec gnome-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
-			;;
 		kde ) echo "Installing kde" ; pacman --noconfirm -S kdebase ; cp /etc/skel.xinitrc ~ ; echo "exec startkde" >> ~/.xinitrc ; echo "Completed" ; break ;;
-			;;
 		lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc ~ ; echo "exec startlxde" >> ~/.xinitrc ; echo "Completed" ;;
 	esac
 done
