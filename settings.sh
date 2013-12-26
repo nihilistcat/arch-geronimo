@@ -26,7 +26,7 @@ echo -e "Do you want to enable AUR helper (yaourt) ?\nKeep in mind this will req
 select yn in "Yes" "No"
 	case $yn in
 		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt ; cd yaourt ; makepkg --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
-		No ) echo "Ok, suite yourself.." ;;
+		No ) echo "Ok, suite yourself.." ; break ;;
 	esac
 done
 
@@ -36,7 +36,7 @@ select yn in "Yes" "No"
 	case $yn in
 		Yes ) yaourt --noconfirm -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
 				echo "Done" ; break ;;
-		No ) echo "Fine.." ;;
+		No ) echo "Fine.." ; break ;;
 	esac
 done
 
@@ -45,7 +45,7 @@ echo "Would you like to install graphics driver?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) sleep 1 ; break ;;
-		No ) exit ;;
+		No ) echo "Finished with settings" ; break ;;
 	esac
 done
 
@@ -70,5 +70,3 @@ select opt in "${options[@]}"; do
 					done ;;
 	esac
 done
-
-echo "Done"
