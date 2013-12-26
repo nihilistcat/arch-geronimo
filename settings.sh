@@ -22,13 +22,15 @@ select $opt in "${options[@]}"; do
 					case $yn in
 						opensource ) pacman --noconfirm -S  xf86-video-ati ; echo "Completed" ; break;;
 						proprietary ) pacman --noconfirm -S catalyst ; echo "Completed" ;;
-					esac
+					esac ;; break
 		nvidia ) echo -e "Installing nvidia graphics drivers (eww)\nDo you want opensource or proprietary?"
 					select yn in "opensource" "proprietary"; do
 					case $yn in
 						opensource ) pacman --noconfirm -S xf86-video-nouveau ; echo "Completed" ; break;;
 						proprietary ) pacman --noconfirm -S nvidia ; echo "Completed" ;;
 					esac
+	esac
+done
 
 ## Desktop environment installer
 
@@ -46,6 +48,7 @@ select $opt in "${options[@]}"; do
 			;;
 		lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc ~ ; echo "exec startlxde" >> ~/.xinitrc ; echo "Completed" ;;
 	esac
+done
 
 echo "Done with installing a Desktop, upon login, execute startx"
 
@@ -57,7 +60,7 @@ select yn in "Yes" "No"
 		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt ; cd yaourt ; makepkg --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
 		No ) echo "Ok, suite yourself.." ;;
 	esac
-
+done
 ## infinality installer
 
 echo "Do you want better font rendering with Infinality?"
@@ -66,6 +69,6 @@ select yn in "Yes" "No"
 		Yes ) yaourt --noconfirm -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ; break ;;
 		No ) echo "Fine.." ;;
 	esac
-
+done
 echo "Done with settings"
 
