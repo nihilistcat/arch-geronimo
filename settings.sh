@@ -23,7 +23,7 @@ done
 ## Arch User Repository helper installer
 
 echo -e "Do you want to enable AUR helper (yaourt) ?\nKeep in mind this will require base-devel"
-select yn in "Yes" "No"
+select yn in "Yes" "No" ; do
 	case $yn in
 		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt ; cd yaourt ; makepkg --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
 		No ) echo "Ok, suite yourself.." ; break ;;
@@ -32,7 +32,7 @@ done
 
 ## infinality installer
 echo -e "Do you want better font rendering with Infinality?\n You must have installed yaourt in previous step" 
-select yn in "Yes" "No"
+select yn in "Yes" "No" ; do
 	case $yn in
 		Yes ) yaourt --noconfirm -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
 				echo "Done" ; break ;;
