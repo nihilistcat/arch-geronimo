@@ -12,7 +12,7 @@ echo "installing xorg and synaptics drivers"
 sleep 2
 pacman --noconfirm -S mesa xorg-server xorg-xinit xf86-input-synaptics xf86-input-mouse
 
-echo "Choose your graphics"
+echo "Choose your graphics\nNOTE: The proprietary drivers are usually for newer gpus. If you are using an old gpu, pls. go with the opensource driver"
 options=("intel" "amd" "nvidia")
 select opt in "${options[@]}"; do
 	case $opt in
@@ -21,7 +21,7 @@ select opt in "${options[@]}"; do
 				select yn in "opensource" "proprietary"; do
 					case $yn in
 						opensource ) pacman --noconfirm -S  xf86-video-ati ; echo "Completed" ; break;;
-						proprietary ) pacman --noconfirm -S catalyst ; echo "Completed" ;;
+						proprietary ) echo -e "[catalyst]\nServer = http://catalyst.wirephire.com/repo/catalyst/\$arch" >> /etc/pacman.conf ;; pacman -Syy && pacman --noconfirm -S catalyst ; echo "Completed" ;;
 					esac
 				done ; break ;;
 		nvidia ) echo -e "Installing nvidia graphics drivers (eww)\nDo you want opensource or proprietary?"
