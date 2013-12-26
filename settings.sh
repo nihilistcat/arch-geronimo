@@ -13,7 +13,6 @@ sleep 2
 pacman --noconfirm -S mesa xorg-server xorg-xinit xf86-input-synaptics xf86-input-mouse
 
 echo "Choose your graphics"
-echo -e "intel\amd\nvidia"
 options=("intel" "amd" "nvidia")
 select $opt in "${options[@]}"; do
 	case $opt in
@@ -34,7 +33,6 @@ select $opt in "${options[@]}"; do
 ## Desktop environment installer
 
 echo "Choose a Desktop Environtment"
-echo -e "cinnamon\xfce\gnome\kde\lxde"
 options=("cinnamon" "xfce" "gnome" "kde" "lxde")
 select $opt in "${options[@]}"; do
 	case $opt in
