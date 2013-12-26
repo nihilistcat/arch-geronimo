@@ -22,13 +22,15 @@ select $opt in "${options[@]}"; do
 					case $yn in
 						opensource ) pacman --noconfirm -S  xf86-video-ati ; echo "Completed" ; break;;
 						proprietary ) pacman --noconfirm -S catalyst ; echo "Completed" ;;
-					esac ;; break
+					esac
+				done ; break ;;
 		nvidia ) echo -e "Installing nvidia graphics drivers (eww)\nDo you want opensource or proprietary?"
 					select yn in "opensource" "proprietary"; do
-					case $yn in
-						opensource ) pacman --noconfirm -S xf86-video-nouveau ; echo "Completed" ; break;;
-						proprietary ) pacman --noconfirm -S nvidia ; echo "Completed" ;;
-					esac
+						case $yn in
+							opensource ) pacman --noconfirm -S xf86-video-nouveau ; echo "Completed" ; break;;
+							proprietary ) pacman --noconfirm -S nvidia ; echo "Completed" ;;
+						esac
+					done ;;
 	esac
 done
 
