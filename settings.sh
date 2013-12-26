@@ -18,7 +18,7 @@ select yn in "Yes" "No"; do
 			done ; echo "Done with installing a Desktop, upon login, execute startx" ; break ;;
         No ) echo "Moving on" ;;
     esac
-
+done
 
 ## Arch User Repository helper installer
 
@@ -28,26 +28,26 @@ select yn in "Yes" "No"
 		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt ; cd yaourt ; makepkg --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
 		No ) echo "Ok, suite yourself.." ;;
 	esac
-
+done
 
 ## infinality installer
-echo "Do you want better font rendering with Infinality?" 
+echo -e "Do you want better font rendering with Infinality?\n You must have installed yaourt in previous step" 
 select yn in "Yes" "No"
 	case $yn in
 		Yes ) yaourt --noconfirm -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
 				echo "Done" ; break ;;
 		No ) echo "Fine.." ;;
 	esac
-
+done
 
 ## install graphics driver
 echo "Would you like to install graphics driver?"
 select yn in "Yes" "No"; do
 	case $yn in
-		Yes ) echo "Starting Install" ; break ;;
+		Yes ) sleep 1 ; break ;;
 		No ) exit ;;
 	esac
-
+done
 
 echo -e "Choose your graphics\nNOTE: The proprietary drivers are usually for newer gpus. If you are using an old gpu, pls. go with the opensource driver"
 options=("intel" "amd" "nvidia")
