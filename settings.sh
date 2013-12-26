@@ -16,7 +16,7 @@ select yn in "Yes" "No"; do
 					lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc ~ ; echo "exec startlxde" >> ~/.xinitrc ; echo "Completed" ;;
 				esac
 			done ; echo "Done with installing a Desktop, upon login, execute startx" ; break ;;
-        No ) echo "Moving on" ;;
+        No ) break ;;
     esac
 done
 
