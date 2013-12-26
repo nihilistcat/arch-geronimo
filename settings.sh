@@ -21,7 +21,7 @@ select opt in "${options[@]}"; do
 				select yn in "opensource" "proprietary"; do
 					case $yn in
 						opensource ) pacman --noconfirm -S  xf86-video-ati ; echo "Completed" ; break;;
-						proprietary ) echo -e "[catalyst]\nServer = http://catalyst.wirephire.com/repo/catalyst/\$arch" >> /etc/pacman.conf ;; pacman -Syy && pacman --noconfirm -S catalyst ; echo "Completed" ;;
+						proprietary ) echo -e "[catalyst]\nServer = http://catalyst.wirephire.com/repo/catalyst/\$arch" >> /etc/pacman.conf ; pacman -Syy && pacman --noconfirm -S catalyst ; echo "Completed" ;;
 					esac
 				done ; break ;;
 		nvidia ) echo -e "Installing nvidia graphics drivers (eww)\nDo you want opensource or proprietary?"
