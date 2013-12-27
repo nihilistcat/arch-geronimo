@@ -1,7 +1,7 @@
 **Simple install script for Arch Lnux written in bash**
 
 
-This is a project for me to learn bash, it's noobishly written but works fine for me.
+This is a project for me to learn bash, it's noobishly written but works fine for me. On a good internet connecton t can install Arch in under 5 minutes.
 
 The installation process is aimed for new Arch users and closely follows the beginners installation guide (see ArchWiki).
 
