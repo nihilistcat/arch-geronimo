@@ -1,7 +1,8 @@
-**simple install script for arch linux written in bash**
+**Simple install script for Arch Lnux written in bash**
 
 
 This is a project for me to learn bash, it's noobishly written but works fine for me.
+The installation process is aimed for new Arch users and closely follows the beginners installation guide (see ArchWiki).
 
 The current version is able to install arch linux to a MBR harddrive with one root and one swap partition and it uses the grub boot loader.
 
