@@ -41,7 +41,7 @@ done
 echo -e "Do you want better font rendering with Infinality?\nChoose yes when prompted to replace freetype2" 
 select yn in "Yes" "No" ; do
 	case $yn in
-		Yes ) wget https://aur.archlinux.org/packages/fr/freetype2-infinality/freetype2-infinality.tar.gz ; tar xzf freetype2-infinality.tar.gz ; cd freetype2-infinality ; makepkg --asroot -s -i ; cd .. ; wget https://aur.archlinux.org/packages/fo/fontconfig-infinality/fontconfig-infinality.tar.gz ; tar xzf fontconfig-infinality.tar.gz ; cd fontconfig-infinality ; makepkg --asroot -s -i ; cd .. ; rm -rf freetype2-infinality.tar.gz freetype2-infinality fontconfig-infinality.tar.gz fontconfig-infinality ; echo "choose a style" ; infctl setstyle ; echo "Done" ; break ;;
+		Yes ) wget https://aur.archlinux.org/packages/fr/freetype2-infinality/freetype2-infinality.tar.gz ; tar xzf freetype2-infinality.tar.gz ; cd freetype2-infinality ; makepkg --asroot -s -i ; cd .. ; wget https://aur.archlinux.org/packages/fo/fontconfig-infinality/fontconfig-infinality.tar.gz ; tar xzf fontconfig-infinality.tar.gz ; cd fontconfig-infinality ; makepkg --asroot --noconfirm -s -i ; cd .. ; rm -rf freetype2-infinality.tar.gz freetype2-infinality fontconfig-infinality.tar.gz fontconfig-infinality ; echo "choose a style" ; infctl setstyle ; echo "Done" ; break ;;
 		No ) echo "Fine.." ; break ;;
 	esac
 done
