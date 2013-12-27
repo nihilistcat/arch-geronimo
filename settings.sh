@@ -9,11 +9,11 @@ select yn in "Yes" "No"; do
 			options=("cinnamon" "xfce" "gnome" "kde" "lxde")
 			select opt in "${options[@]}"; do
 				case $opt in
-					cinnamon ) echo "Installing cinnamon" ; pacman --noconfirm -S cinnamon ; cp /etc/skel/.xinitrc ~ ; echo "exec cinnamon-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
-					xfce ) echo "Installing xfce" ; pacman --noconfirm -S xfce4 ; cp /etc/skel/.xinitrc ~ ; echo "exec xfce4-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
-					gnome ) echo "Installing gnome" ; pacman --noconfirm -S gnome ; cp /etc/skel/.xinitrc ~ ; echo "exec gnome-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
-					kde ) echo "Installing kde" ; pacman --noconfirm -S kdebase ; cp /etc/skel.xinitrc ~ ; echo "exec startkde" >> ~/.xinitrc ; echo "Completed" ; break ;;
-					lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc ~ ; echo "exec startlxde" >> ~/.xinitrc ; echo "Completed" ; break ;;
+					cinnamon ) echo "Installing cinnamon" ; pacman --noconfirm -S cinnamon ; cp /etc/skel/.xinitrc /home/newuser/ ; echo "exec cinnamon-session" >> /home/newuser/.xinitrc ; echo "Completed" ; break ;;
+					xfce ) echo "Installing xfce" ; pacman --noconfirm -S xfce4 ; cp /etc/skel/.xinitrc /home/newuser/ ; echo "exec xfce4-session" >> /home/newuser/.xinitrc ; echo "Completed" ; break ;;
+					gnome ) echo "Installing gnome" ; pacman --noconfirm -S gnome ; cp /etc/skel/.xinitrc /home/newuser/ ; echo "exec gnome-session" >> /home/newuser/.xinitrc ; echo "Completed" ; break ;;
+					kde ) echo "Installing kde" ; pacman --noconfirm -S kdebase ; cp /etc/skel.xinitrc /home/newuser/ ; echo "exec startkde" >> /home/newuser/.xinitrc ; echo "Completed" ; break ;;
+					lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc /home/newuser/ ; echo "exec startlxde" >> /home/newuser/.xinitrc ; echo "Completed" ; break ;;
 				esac
 			done ; echo "Done with installing a Desktop, upon login, execute startx" ; break ;;
         No ) break ;;
