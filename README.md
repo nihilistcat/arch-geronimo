@@ -14,7 +14,7 @@ There is no support for advanced features like UEFI/GPT. But, due to the modular
 * boot archiso
 * install git (pacman -S git)
 * clone this repo
-* cd into the dir
+* cd into the dir, run 'chmod +x geronimo.sh'
 * discover your ethernet with 'ip link'
 * use fdisk to partition drive with 1 swap and 1 root
 * execute ./geronimo
