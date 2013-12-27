@@ -13,7 +13,7 @@ select yn in "Yes" "No"; do
 					xfce ) echo "Installing xfce" ; pacman --noconfirm -S xfce4 ; cp /etc/skel/.xinitrc ~ ; echo "exec xfce4-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
 					gnome ) echo "Installing gnome" ; pacman --noconfirm -S gnome ; cp /etc/skel/.xinitrc ~ ; echo "exec gnome-session" >> ~/.xinitrc ; echo "Completed" ; break ;;
 					kde ) echo "Installing kde" ; pacman --noconfirm -S kdebase ; cp /etc/skel.xinitrc ~ ; echo "exec startkde" >> ~/.xinitrc ; echo "Completed" ; break ;;
-					lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc ~ ; echo "exec startlxde" >> ~/.xinitrc ; echo "Completed" ;;
+					lxde ) echo "Installing lxde" ; pacman --noconfirm -S lxde ; cp /etc/skel/.xinitrc ~ ; echo "exec startlxde" >> ~/.xinitrc ; echo "Completed" ; break ;;
 				esac
 			done ; echo "Done with installing a Desktop, upon login, execute startx" ; break ;;
         No ) break ;;
