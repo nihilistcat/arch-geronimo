@@ -16,3 +16,12 @@ There is no support for advanced features like UEFI/GPT. But, due to the modular
 * discover your ethernet with 'ip link'
 * use fdisk to partition drive with 1 swap and 1 root
 * execute ./geronimo
+
+
+_______
+
+TODO:
+
+* add uefi support
+* add unattended/remote installtion support
+* clean up code and increase efficiancy/speed.
