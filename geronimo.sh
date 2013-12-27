@@ -60,6 +60,7 @@ sed -i -e s,newrootpassword,"$name",g users.sh
 echo "What should be the name for the non-root user?: "
 read name
 sed -i -e s,newuser,"$name",g users.sh
+sed -i -e s,newuser,"$name",g settings.sh
 echo "What should be the password for the non-root user?: "
 read name
 sed -i -e s,mypassword,"$name",g users.sh
