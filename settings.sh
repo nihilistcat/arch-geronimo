@@ -32,20 +32,19 @@ done
 echo -e "Do you want to enable AUR helper (yaourt) ?\nKeep in mind this will require base-devel"
 select yn in "Yes" "No" ; do
 	case $yn in
-		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --asroot --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt.tar.gz ; cd yaourt ; makepkg --asroot --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
+		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --asroot --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt.tar.gz ; cd yaourt ; makepkg --asroot --noconfirm -s -i ; cd .. ; rm -rf package-query.tar.gz yaourt.tar.gz package-query yaourt ;  echo "done" ; break ;;
 		No ) echo "Ok, suite yourself.." ; break ;;
 	esac
 done
 
-## infinality installer - will work on this later
-#echo -e "Do you want better font rendering with Infinality?\n You must have installed yaourt in previous step" 
-#select yn in "Yes" "No" ; do
-#	case $yn in
-#		Yes ) yaourt --noconfirm --force -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
-#				echo "Done" ; break ;;
-#		No ) echo "Fine.." ; break ;;
-#	esac
-#done
+## infinality installer - need to work on auto prompt answer
+echo -e "Do you want better font rendering with Infinality?\n Choose yes when prompted to replace freetype2" 
+select yn in "Yes" "No" ; do
+	case $yn in
+		Yes ) wget https://aur.archlinux.org/packages/fo/fontconfig-infinality/fontconfig-infinality.tar.gz ; tar xzf fontconfig-infinality.tar.gz ; cd fontconfig-infinality ; makepkg --asroot -s -i ; cd .. ; rm -rf fontconfig-infinality.tar.gz fontconfig-infinality ; echo "choose a style" ; infctl setstyle ; echo "Done" ; break ;;
+		No ) echo "Fine.." ; break ;;
+	esac
+done
 
 ## install graphics driver
 echo "Would you like to install graphics driver?"
