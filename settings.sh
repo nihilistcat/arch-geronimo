@@ -1,4 +1,11 @@
 #!/bin/bash
+echo "Run advanced installation steps? (gui/aur/drivers)"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) break ;;
+		No ) exit ;;
+	esac
+done
 
 echo "Do you want a desktop?"
 select yn in "Yes" "No"; do
