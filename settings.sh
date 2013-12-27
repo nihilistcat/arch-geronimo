@@ -37,15 +37,15 @@ select yn in "Yes" "No" ; do
 	esac
 done
 
-## infinality installer
-echo -e "Do you want better font rendering with Infinality?\n You must have installed yaourt in previous step" 
-select yn in "Yes" "No" ; do
-	case $yn in
-		Yes ) yaourt --noconfirm --force -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
-				echo "Done" ; break ;;
-		No ) echo "Fine.." ; break ;;
-	esac
-done
+## infinality installer - will work on this later
+#echo -e "Do you want better font rendering with Infinality?\n You must have installed yaourt in previous step" 
+#select yn in "Yes" "No" ; do
+#	case $yn in
+#		Yes ) yaourt --noconfirm --force -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
+#				echo "Done" ; break ;;
+#		No ) echo "Fine.." ; break ;;
+#	esac
+#done
 
 ## install graphics driver
 echo "Would you like to install graphics driver?"
