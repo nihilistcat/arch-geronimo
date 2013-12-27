@@ -41,7 +41,7 @@ done
 echo -e "Do you want better font rendering with Infinality?\n You must have installed yaourt in previous step" 
 select yn in "Yes" "No" ; do
 	case $yn in
-		Yes ) yaourt --noconfirm -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
+		Yes ) yaourt --noconfirm --force -S freetype2-infinality fontconfig-infinality ; echo "choose a style" ; infctl setstyle ;
 				echo "Done" ; break ;;
 		No ) echo "Fine.." ; break ;;
 	esac
