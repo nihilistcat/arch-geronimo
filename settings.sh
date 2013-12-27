@@ -32,7 +32,7 @@ done
 echo -e "Do you want to enable AUR helper (yaourt) ?\nKeep in mind this will require base-devel"
 select yn in "Yes" "No" ; do
 	case $yn in
-		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --asroot --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt ; cd yaourt ; makepkg --asroot --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
+		Yes ) pacman --noconfirm -S base-devel wget ; wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz ; tar xzf package-query.tar.gz ; cd package-query ; makepkg --asroot --noconfirm -s -i ; cd .. ; wget https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz ; tar xzf yaourt.tar.gz ; cd yaourt ; makepkg --asroot --noconfirm -s -i ; cd .. ; echo "done" ; break ;;
 		No ) echo "Ok, suite yourself.." ; break ;;
 	esac
 done
