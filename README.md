@@ -11,16 +11,18 @@ Current features:
 * Install AUR helper yaourt
 * Perform fontconfig patch 'infinality' for better font rendering
 * Install Xorg server, synaptic input drivers and one base DE (gnome, cinnamon, kde, xfce or lxde)
-* Install intel drivers plus nvidia/amd drivers (proprietary or open-source)
+* Install intel graphics drivers plus nvidia/amd drivers (proprietary or open-source)
 
 There is no support for advanced features like UEFI/GPT. But, due to the modular structure a simple script can be written to achieve this task.
 
+__________
+**Instructions**
 * boot archiso
-* install git (pacman -S git)
+* install git (pacman -S git) / You might have to sync repos first with 'pacman -Syy'
 * clone this repo
-* cd into the dir, run 'chmod +x geronimo.sh'
-* discover your ethernet with 'ip link'
-* use fdisk to partition drive with 1 swap and 1 root
+* cd into the dir, run 'chmod +x geronimo' to make executable
+* discover your ethernet with 'ip link' (usually starts with e like enp0s15)
+* use fdisk to partition drive with 1 swap and 1 root ([tutorial](https://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=1&chap=4#doc_chap4))
 * execute ./geronimo
 
 
