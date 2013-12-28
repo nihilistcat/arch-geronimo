@@ -5,9 +5,13 @@ This is a project for me to learn bash, it's noobishly written but works fine fo
 
 The installation process is aimed for new Arch users and closely follows the beginners installation guide (see ArchWiki).
 
-The current version is able to install arch linux to a MBR harddrive with one root and one swap partition and it uses the grub boot loader.
-
-You can set up a primary user with sudo privileges alongside the root account, and install opensource/proprietary drivers / desktop environments / synaptics etc.
+Current features:
+* Install Archlinux on a MBR disk with one swap and one root partition.
+* Set up locale/timezone/hostname and user with root privileges
+* Install AUR helper yaourt
+* Perform fontconfig patch 'infinality' for better font rendering
+* Install Xorg server, synaptic input drivers and one base DE (gnome, cinnamon, kde, xfce or lxde)
+* Install intel drivers plus nvidia/amd drivers (proprietary or open-source)
 
 There is no support for advanced features like UEFI/GPT. But, due to the modular structure a simple script can be written to achieve this task.
 
@@ -25,5 +29,5 @@ _______
 TODO:
 
 * add uefi support
-* add unattended/remote installation support
+* add simple disk partitioning script
 * clean up code and increase efficiency/speed.
