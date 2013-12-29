@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Arch-geronimo</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Arch-geronimo</h1>
+    </header>
+    <div id="container">
+      <p class="tagline"></p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/nihilistcat/arch-geronimo/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/nihilistcat/arch-geronimo/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/nihilistcat/arch-geronimo" class="code">View Arch-geronimo on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <p><strong>Simple install script for Arch Lnux written in bash</strong></p>
+
+<p>This is a project for me to learn bash, it's noobishly written but works fine for me. On a good internet connecton it can install Arch in under 5 minutes.</p>
+
+<p>The installation process is aimed for new Arch users and closely follows the beginners installation guide (see ArchWiki).</p>
+
+<p>Current features:</p>
+
+<ul>
+<li>Install Archlinux on a MBR disk with one swap and one root partition.</li>
+<li>Set up locale/timezone/hostname and user with root privileges</li>
+<li>Install AUR helper yaourt</li>
+<li>Perform fontconfig patch 'infinality' for better font rendering</li>
+<li>Install Xorg server, synaptic input drivers and one base DE (gnome, cinnamon, kde, xfce or lxde)</li>
+<li>Install intel graphics drivers plus nvidia/amd drivers (proprietary or open-source)</li>
+</ul><p>There is no support for advanced features like UEFI/GPT. But, due to the modular structure a simple script can be written to achieve this task.</p>
+
+<hr><p><strong>Instructions</strong></p>
+
+<ul>
+<li>boot archiso</li>
+<li>install git (pacman -S git) / You might have to sync repos first with 'pacman -Syy'</li>
+<li>clone this repo</li>
+<li>cd into the dir, run 'chmod +x geronimo' to make executable</li>
+<li>discover your ethernet with 'ip link' (usually starts with e like enp0s15)</li>
+<li>use fdisk to partition drive with 1 swap and 1 root (<a href="https://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=4#doc_chap4">tutorial</a>)</li>
+<li>execute ./geronimo</li>
+</ul><hr><p>TODO:</p>
+
+<ul>
+<li>add uefi support</li>
+<li>add simple disk partitioning script</li>
+<li>clean up code and increase efficiency/speed.</li>
+</ul>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/nihilistcat" class="avatar"><img src="https://0.gravatar.com/avatar/7c5bc6ab48b518a384affcc757192835?d=https%3A%2F%2Fidenticons.github.com%2F287ca6c5481ee4f73b4e5fcd1a4afa30.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/nihilistcat">nihilistcat</a> maintains <a href="https://github.com/nihilistcat/arch-geronimo">Arch-geronimo</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/nihilistcat/arch-geronimo/tarball/master" class="tar">tar</a><a href="https://github.com/nihilistcat/arch-geronimo/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
