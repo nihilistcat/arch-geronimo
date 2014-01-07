@@ -11,7 +11,7 @@ echo "Do you want a desktop?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) echo "installing xorg and synaptics drivers" ;
-			pacman --noconfirm -S mesa xorg-server xorg-xinit xf86-input-synaptics xf86-input-mouse ;
+			pacman --noconfirm -S mesa xorg-server xorg-xinit xf86-input-synaptics xf86-input-mouse xdg-user-dirs ;
 			echo "Choose a Desktop Environtment"
 			options=("cinnamon" "xfce" "gnome" "kde" "lxde")
 			select opt in "${options[@]}"; do
