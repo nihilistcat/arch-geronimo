@@ -1,9 +1,9 @@
 **Simple install script for Arch Lnux written in bash**
 
 
-This is a project for me to learn bash, it's noobishly written but works fine for me. On a good internet connecton it can install Arch in under 5 minutes.
+This is a project for me to learn bash, it's noobishly written but works fine for me. On a good internet connecton it can install a basic Arch system in under 5 minutes.
 
-The installation process is aimed for new Arch users and closely follows the beginners installation guide (see ArchWiki).
+The installation process is aimed for new Arch users with old machines (for quickly erasing and setting up Arch) and closely follows the beginners installation guide (see [ArchWiki](https://wiki.archlinux.org/index.php/Beginners'_Guide).)
 
 Current features:
 * Install Archlinux on a MBR disk with one swap and one root partition.
