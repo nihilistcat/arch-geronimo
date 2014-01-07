@@ -4,6 +4,7 @@
 This is a project for me to learn bash, it's noobishly written but works fine for me. On a good internet connecton it can install a basic Arch system in under 5 minutes.
 
 The installation process is aimed for new Arch users with old machines (for quickly erasing and setting up Arch) and closely follows the beginners installation guide (see [ArchWiki](https://wiki.archlinux.org/index.php/Beginners'_Guide).)
+It's also useful for those who have to install Arch multiple times and simply don't have the time to do it manually.
 
 Current features:
 * Install Archlinux on a MBR disk with one swap and one root partition.
