@@ -1,15 +1,9 @@
 #!/bin/bash
 
-echo "Hi! Welcome to this stupidly simple arch install script, few things you should know:"
-echo " "
-echo "1. Use fdisk to define your root and swap partitions first!"
-echo "2. Use 'ip link' to find out your wired interface name"
-echo "3. Make a backup of the 'arch-geronimo' folder"
-echo "4. The installation CANNOT be resumed once it's interrupted, start fresh from the backup!"
-echo " "
-echo "Good luck!"
-echo " "
-sleep 1
+echo "Hi! Welcome to this stupidly simple arch install script, few things you should know:\n1. Use fdisk to define your root and swap partitions first.\n2. Use 'ip link' to find out your wired interface name, usually beinning with e like eth0.\n3. The installation CANNOT be resumed once it's interrupted, start fresh from the backup!"
+echo "--- Good luck! ---"
+mkdir backup
+cp -r modules geronimo backup
 echo "Are you ready to begin the process?"
 select yn in "Yes" "No"; do
     case $yn in
