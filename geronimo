@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Hi! Welcome to this stupidly simple arch install script, few things you should know:\n1. Use fdisk to define your root and swap partitions first.\n2. Use 'ip link' to find out your wired interface name, usually beinning with e like eth0.\n3. The installation CANNOT be resumed once it's interrupted, start fresh from the backup!"
+echo -e "Hi! Welcome to this stupidly simple arch install script, few things you should know:\n1. Use fdisk to define your root and swap partitions first.\n2. Use 'ip link' to find out your wired interface name, usually beinning with e like eth0.\n3. The installation CANNOT be resumed once it's interrupted, start fresh from the backup!"
 echo "--- Good luck! ---"
 mkdir backup
 cp -r modules geronimo backup
