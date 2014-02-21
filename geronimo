@@ -13,6 +13,14 @@ select yn in "Yes" "No"; do
 done
 
 # interactive configuration
+
+# faster mirror selection using reflector
+echo -e "Do you want to get a faster mirrorlist for your location?\nThis will speed up package downloads significantly"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) pacman -Syy && pacman --noconfirm -S reflector && reflector -p http --sort rate --save /etc/pacman.d/mirrorlist && pacman -Syy ; break ;;
+        No ) break ;;
+        
 # filesystem selection
 echo "What should be the root filesystem? e.g. /dev/sda1: "
 read name
