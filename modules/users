@@ -13,3 +13,9 @@ useradd -m -g users -G wheel,storage,power -s /bin/bash newuser
 # set password for new user
 
 echo "newuser:mypassword" | chpasswd
+
+# install sudo
+pacman --noconfirm -S sudo
+
+# add user to sudoers file
+echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
