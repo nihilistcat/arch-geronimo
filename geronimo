@@ -86,7 +86,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 cp modules/* /mnt
 
 # now we chroot into the base system and execute the scripts
-arch-chroot /mnt /bin/bash -c "chmod +x lth wired users visudo settings grub ; ./lth ; ./wired ; ./users ; ./visudo ; ./settings ; ./grub ; rm lth wired users visudo settings grub filesystem ; exit"
+arch-chroot /mnt /bin/bash -c "chmod +x lth wired users settings grub ; ./lth ; ./wired ; ./users ; ./settings ; ./grub ; rm lth wired users settings grub filesystem ; exit"
 
 # unmount
 umount /mnt
